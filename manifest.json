@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Fast link v2.1 Multilang",
+    "description": "Генерує QRCode з посиланням на сайт для швидкого відкриття на смартфоні!",
+    "version": "2.1",
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon/qrcode.png",
+        "default_title": "Fast Link 2.1"
+    },
+    "author": "Ivan Tsaryk",
+    "icons": {
+        "32": "icon/qrcode.png"
+    },
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+      },
+    "options_page": "options.html",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "<all_urls>",
+        "declarativeContent",
+        "storage",
+        "tabCapture"
+    ]
+}

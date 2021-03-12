@@ -1,0 +1,25 @@
+* {
+    border: 1px solid rgb(255, 0, 0) !important;
+    background-color: rgba(255, 0, 0, 0.05) !important;
+}
+
+div, nav {
+    border-color: rgb(7, 221, 0) !important;
+    background-color: rgba(9, 255, 0, 0.05) !important;
+}
+
+ul, li {
+    border-color: rgb(255, 20, 147) !important;
+    background-color: rgba(255, 20, 147, 0.05) !important;
+}
+
+p, a, span {
+    border-color: rgb(166, 40, 255) !important;
+    background-color: rgba(166, 40, 255, 0.15) !important;
+}
+
+input, select, option {
+    border-color: rgb(255, 94, 36) !important;
+    background-color: rgba(255, 94, 36, 0.15) !important;
+}
+

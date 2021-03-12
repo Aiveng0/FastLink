@@ -1,0 +1,103 @@
+:root {
+    --main-bg: #212529;
+    --sidebar-bg: #343a40;
+    --tablink-bg: #495057;
+    --tablink-hover: #6c757d;
+    --text-color: #cccccc;
+    --placeholder-color: #6c757d;
+    --link: #00ffff;
+    
+    --input-radio-border-no-active:#6c757d;
+}
+
+body {
+    background: var(--main-bg);
+    color: var(--text-color);
+}
+
+.sidebar-content {
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.tablink {
+    background: var(--tablink-bg);;
+    color: var(--text-color);
+}
+
+.tablink:hover {
+    background: var(--tablink-hover);
+}
+
+.general-option-list label {
+    color: var(--text-color);
+}
+
+.change-lang {
+    background: var(--main-bg);
+    border: 1px solid var(--tablink-bg);
+    color: var(--text-color);
+}
+
+.change-lang:hover {
+    background: var(--tablink-hover);
+}
+
+.change-theme {
+    background: var(--main-bg);
+    border: 1px solid var(--tablink-bg);
+    color: var(--text-color);
+}
+
+.change-theme:hover {
+    background: var(--tablink-hover);
+}
+
+.option-title-info {
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+}
+
+.option-title-info:hover::after {
+    border-color: var(--tablink-hover);
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+}
+
+.text-def {
+    color: var(--placeholder-color);
+}
+
+.sidebar-content-bottom a {
+    color: var(--placeholder-color);
+}
+
+.sidebar-content-bottom p {
+    color: var(--placeholder-color);
+}
+
+.tablink-off-style {
+    background: var(--sidebar-bg);
+}
+
+.tablink-off-style:hover {
+    background: var(--tablink-bg);
+}
+
+.doc-link {
+    color: var(--link);
+}
+
+
+.logo img {
+    background: var(--text-color);
+}
+
+.yellow-bg {
+    background: var(--tablink-hover);
+}
+
+.nav-active-btn {
+    background: var(--main-bg);
+}

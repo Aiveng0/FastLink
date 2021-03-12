@@ -1,0 +1,107 @@
+:root {
+    --main-bg: #0077B6;
+    --sidebar-bg: #0096C7;
+    --tablink-bg: #0096C7;
+    --tablink-hover: #48CAE4;
+    --text-color: #ffffff;
+    --placeholder-color: #cccccc;
+    --link: #40ff69;
+    --mess-gradient: linear-gradient(90deg, rgba(0,153,255,0.8171296296296297) 0%, rgba(0,255,218,1) 100%);
+
+    --input-radio-dis: #e9ecef;
+    --input-radio-border-no-active: #cccccc;
+    --input-radio-border-hover: #ffffff;
+    --input-radio-bg: #b3d7ff;
+    --input-radio-border-focus: #80bdff;
+    --input-radio-border-checked: #64d8ff;
+    --input-radio-bg-checked: #0096C7;
+    --input-radoi-box-shadow: rgba(0, 123, 255, 0.25);
+}
+
+body {
+    background: var(--main-bg);
+    color: var(--text-color);
+}
+
+.sidebar-content {
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.tablink {
+    background: var(--tablink-bg);;
+    color: var(--text-color);
+}
+
+.tablink:hover {
+    background: var(--tablink-hover);
+}
+
+.general-option-list label {
+    color: var(--text-color);
+}
+
+.change-lang {
+    background: var(--main-bg);
+    border: 1px solid var(--tablink-bg);
+    color: var(--text-color);
+}
+
+.change-lang:hover {
+    background: var(--tablink-hover);
+}
+
+.change-theme {
+    background: var(--main-bg);
+    border: 1px solid var(--tablink-bg);
+    color: var(--text-color);
+}
+
+.change-theme:hover {
+    background: var(--tablink-hover);
+}
+
+.option-title-info {
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+}
+
+.option-title-info:hover::after {
+    border-color: var(--tablink-hover);
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+}
+
+.text-def {
+    color: var(--placeholder-color);
+}
+
+.sidebar-content-bottom a {
+    color: var(--placeholder-color);
+}
+
+.sidebar-content-bottom p {
+    color: var(--placeholder-color);
+}
+
+.tablink-off-style {
+    background: var(--sidebar-bg);
+}
+
+.tablink-off-style:hover {
+    background: var(--tablink-bg);
+}
+
+.doc-link {
+    color: var(--link);
+}
+
+
+.yellow-bg {
+    background: var(--mess-gradient);
+}
+
+.nav-active-btn {
+    background: var(--main-bg);
+}

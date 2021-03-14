@@ -12,7 +12,7 @@ themeSelect.addEventListener('change', changeColor);
 function changeColor() {
     let theme = themeSelect.value;
     //console.log(theme);
-    
+
     removeTheme();
     switch (theme) {
         case 'white':
@@ -26,6 +26,10 @@ function changeColor() {
         case 'blue':
             includeCSS("css/theme_blue.css");
             setTheme("blue");
+            break;
+        case 'darkIOS':
+            includeCSS("css/theme_darkIOS.css");
+            setTheme("darkIOS");
             break;
         case 'test':
             includeCSS("css/theme_test.css");
@@ -53,7 +57,7 @@ function removeTheme() {
     colorTheme.forEach((item) => {
         item.remove();
     });
-    
+
 }
 
 // Встановлення нової кольорової теми в глобальне сховище

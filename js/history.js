@@ -18,7 +18,21 @@ const updatelocal = () => {
 };
 
 function history(b, c) {
-    let date = new Date();
+    let time = new Date();
+
+    var options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        timezone: 'UTC',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+
+    let date = time.toLocaleString("en", options);
+
     histName = b;
     histLink = c;
 
@@ -35,7 +49,7 @@ const createHist = data => {
     return `
         <div class="card">
             <p class="card-title">${data.name}</p>
-            <a href="${data.link}" class="card-link lng-card-link">${data.link}</a>
+            <a href="${data.link}" class="card-link lng-card-link" target="_blank">${data.link}</a>
             <p class="card-date">${data.date}</p>
         </div>
     `;
@@ -44,11 +58,9 @@ const createHist = data => {
 function addHist() {
     let ttt = localStorage.getItem('hists');
     let mas = JSON.parse(ttt);
-    
     historyWrapper.innerHTML = '';
     if (mas) {
         mas.forEach(item => {
-            console.log(item);
             historyWrapper.innerHTML += createHist(item);
         });
     }
@@ -59,11 +71,31 @@ historyBtn.addEventListener('click', () => {
 });
 
 
+// let histQR = document.querySelector('.histqr');
+// historyBtn.onmouseover = function () {
 
+//     let qrcode = new QRCode(histQR, {
+//         text: "Hello",
+//         width: 150,
+//         height: 150,
+//         colorDark: "#000000",
+//         colorLight: "#ffffff",
+//         correctLevel: QRCode.CorrectLevel.L
+//     });
 
+//     // Остримати ссилку
+//     chrome.tabs.getSelected(null, function (tab) {
+//         let link = document.createElement('a');
+//         link.href = tab.url;
+//         console.log('Створення коду');
+//         qrcode.makeCode(tab.url);
+//     });
 
+// };
 
-
+// historyBtn.onmouseout = function () {
+//     histQR.innerHTML = '';
+// };
 
 
 

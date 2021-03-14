@@ -1,7 +1,7 @@
 :root {
     --main-bg: #0077B6;
     --sidebar-bg: #0096C7;
-    --tablink-bg: #0096C7;
+    --tablink-bg: #00bcd4;
     --tablink-hover: #48CAE4;
     --text-color: #ffffff;
     --placeholder-color: #cccccc;
@@ -98,11 +98,11 @@ body {
 }
 
 .card {
-    background: var(--tablink-bg);
+    background: var(--sidebar-bg);
 }
 
 .card:hover {
-    background: var(--tablink-hover);
+    background: var(--tablink-bg);
 }
 
 .card-title {
@@ -120,7 +120,7 @@ body {
 .btn {
     color: var(--text-color);
     border: 1px solid var(--tablink-hover);
-    background: var(--tablink-bg);
+    background: var(--sidebar-bg);
 }
 
 

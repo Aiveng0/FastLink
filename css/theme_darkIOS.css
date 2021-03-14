@@ -1,18 +1,31 @@
 :root {
-    --main-bg: #212529;
-    --sidebar-bg: #343a40;
-    --tablink-bg: #495057;
-    --tablink-hover: #6c757d;
-    --text-color: #cccccc;
-    --placeholder-color: #6c757d;
+    --main-bg: #1c1c1c;
+    --sidebar-bg: #2c2c2c;
+    --tablink-bg: #3a3a3a;
+    --tablink-hover: #48484a;
+    --text-color: #ffffff;
+    --placeholder-color: #8e8e93;
     --link: #0A84FF;
-    
-    --input-radio-border-no-active:#6c757d;
+    --link-hover: #0096C7;
+    --mess-gradient: linear-gradient(90deg, rgba(0,153,255,0.8171296296296297) 0%, rgba(0,255,218,1) 100%);
+
+    --input-radio-dis: #e9ecef;
+    --input-radio-border-no-active: #cccccc;
+    --input-radio-border-hover: #ffffff;
+    --input-radio-bg: #00ff2663;
+    --input-radio-border-focus: #80bdff;
+    --input-radio-border-checked: #1a7728;
+    --input-radio-bg-checked: #32D74B;
+    --input-radoi-box-shadow: rgba(50, 215, 75, 0.25);
 }
 
 body {
     background: var(--main-bg);
     color: var(--text-color);
+}
+
+.logo img {
+    background: var(--text-color);
 }
 
 .sidebar-content {
@@ -89,13 +102,12 @@ body {
     color: var(--link);
 }
 
-
 .card {
-    background: var(--tablink-bg);
+    background: var(--sidebar-bg);
 }
 
 .card:hover {
-    background: var(--sidebar-bg);
+    background: var(--tablink-bg);
 }
 
 .card-title {
@@ -103,11 +115,11 @@ body {
 }
 
 .card-link {
-    color: var(--text-color);
+    color: var(--link);
 }
 
 .card-link:hover {
-    color: var(--white);
+    color: var(--link-hover);
 }
 
 .btn {
@@ -117,35 +129,10 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.logo img {
-    background: var(--text-color);
-}
-
 .yellow-bg {
-    background: var(--tablink-hover);
+    background: var(--mess-gradient);
 }
 
 .nav-active-btn {
     background: var(--main-bg);
 }
-

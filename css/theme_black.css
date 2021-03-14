@@ -90,6 +90,53 @@ body {
 }
 
 
+.card {
+    background: var(--tablink-bg);
+}
+
+.card:hover {
+    background: var(--sidebar-bg);
+}
+
+.card-title {
+    color: var(--text-color);
+}
+
+.card-link {
+    color: var(--text-color);
+}
+
+.card-link:hover {
+    color: var(--white);
+}
+
+.btn {
+    color: var(--text-color);
+    border: 1px solid var(--tablink-hover);
+    background: var(--tablink-bg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .logo img {
     background: var(--text-color);
 }
@@ -101,3 +148,4 @@ body {
 .nav-active-btn {
     background: var(--main-bg);
 }
+

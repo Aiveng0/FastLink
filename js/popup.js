@@ -8,6 +8,7 @@ chrome.tabs.getSelected(null, function (tab) {
     link.href = tab.url;
     console.log('Створення коду');
     createCode(tab);
+    history(tab.title, tab.url);
 });
 
 // Заголовки
@@ -59,7 +60,7 @@ function createCode(tab) {
                 });
                 qrcode.makeCode(tab.url);
                 // Зміна QRCode від введення тексту
-            inputReloadCode(qrcode);
+                inputReloadCode(qrcode);
             } else if (getSize == 1 && getCorrection == 'Q') {
                 let qrcode = new QRCode(qrPlace, {
                     text: "Hello",
@@ -236,5 +237,8 @@ function createCode(tab) {
 
 
 
-    
+
 }
+
+
+

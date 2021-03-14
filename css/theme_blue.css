@@ -97,6 +97,34 @@ body {
     color: var(--link);
 }
 
+.card {
+    background: var(--tablink-bg);
+}
+
+.card:hover {
+    background: var(--tablink-hover);
+}
+
+.card-title {
+    color: var(--text-color);
+}
+
+.card-link {
+    color: var(--text-color);
+}
+
+.card-link:hover {
+    color: var(--main-bg);
+}
+
+.btn {
+    color: var(--text-color);
+    border: 1px solid var(--tablink-hover);
+    background: var(--tablink-bg);
+}
+
+
+
 
 .yellow-bg {
     background: var(--mess-gradient);

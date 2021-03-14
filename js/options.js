@@ -7,10 +7,11 @@ let codeSize = document.getElementById('codesize'),
     aboutExe = document.getElementById('aboutextension'),
     messageBox = document.querySelector('.message-container'),
     termofservice = document.getElementById('termofservice'),
+    hist = document.getElementById('history'),
     privacy = document.getElementById('privacy');
 
 let btns = document.querySelectorAll('.tablink');
-let settingsArray = [codeSize, corection, privacy, termofservice, aboutExe];
+let settingsArray = [codeSize, corection, privacy, termofservice, aboutExe, hist];
 
 function resetActive() {
     settingsArray.forEach(item => {
@@ -54,6 +55,9 @@ btns.forEach((item) => {
         } else if (item.attributes[0].value == "#privacy") {
             item.classList.add('nav-active-btn');
             privacy.classList.add('active');
+        } else if (item.attributes[0].value == "#history") {
+            item.classList.add('nav-active-btn');
+            hist.classList.add('active');
         } else if (item.attributes[0].value == "#termofservice") {
             item.classList.add('nav-active-btn');
             termofservice.classList.add('active');

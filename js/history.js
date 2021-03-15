@@ -7,6 +7,7 @@ const historyBtn = document.querySelector('.hist-btn');
 let hists = [];
 let hists1;
 
+// клас конструктор для передаці записів в локальне сховище
 function Task(name, link, date) {
     this.name = name;
     this.link = link;
@@ -18,6 +19,7 @@ const updatelocal = () => {
 };
 
 function history(b, c) {
+    // отримуємо дату
     let time = new Date();
 
     var options = {
@@ -31,11 +33,13 @@ function history(b, c) {
         second: 'numeric'
     };
 
+    // переводимо дату в зразок США
     let date = time.toLocaleString("en", options);
 
     histName = b;
     histLink = c;
 
+    // оновлюємо локальне сховище (додаємо записи)
     hists.push(new Task(histName, histLink, date));
     let ttt = localStorage.getItem('hists');
     let mas = JSON.parse(ttt);
@@ -46,6 +50,10 @@ function history(b, c) {
 
 
 const createHist = data => {
+    if (data == null) {
+        return ` `;
+    }
+    // створюємо блоки історії
     return `
         <div class="card">
             <p class="card-title">${data.name}</p>
@@ -56,9 +64,12 @@ const createHist = data => {
 };
 
 function addHist() {
+    // записуємо в масим значення з локального сховища
     let ttt = localStorage.getItem('hists');
     let mas = JSON.parse(ttt);
+    // очищуємо поле з блоками історї
     historyWrapper.innerHTML = '';
+    // передаємо дані з масиву для сторення нових блоків історії
     if (mas) {
         mas.forEach(item => {
             historyWrapper.innerHTML += createHist(item);
@@ -71,94 +82,38 @@ historyBtn.addEventListener('click', () => {
 });
 
 
-// let histQR = document.querySelector('.histqr');
-// historyBtn.onmouseover = function () {
 
-//     let qrcode = new QRCode(histQR, {
-//         text: "Hello",
-//         width: 150,
-//         height: 150,
-//         colorDark: "#000000",
-//         colorLight: "#ffffff",
-//         correctLevel: QRCode.CorrectLevel.L
-//     });
+//   ==== Пошук в історії ====
 
-//     // Остримати ссилку
-//     chrome.tabs.getSelected(null, function (tab) {
-//         let link = document.createElement('a');
-//         link.href = tab.url;
-//         console.log('Створення коду');
-//         qrcode.makeCode(tab.url);
-//     });
+let searchInput = document.querySelector('.search-input');
 
-// };
-
-// historyBtn.onmouseout = function () {
-//     histQR.innerHTML = '';
-// };
+searchInput.addEventListener('input', () => {
+    // перезаписуємо значення при вводі тексту
+    let searchName = searchInput.value.trim();
+    searchHist(searchName);
+});
 
 
+function searchHist(searchName) {
+    // всі блоки з історією пошуку
+    let searchList = document.querySelectorAll('.card');
 
-
-
-
-
-
-
-
-
-
-
-//Зберігання історії в локальне сховище
-// function history(b, c) {
-//     let date = new Date();
-
-//     let codeHistory = {
-//         name: b,
-//         link: c,
-//         date: date
-//     };
-
-//     codeHistory.push(new createHistory(b, c));
-
-//     //let storageID = localStorage.length + 1;
-//     localStorage.setItem('history', JSON.stringify(codeHistory));
-//     addHistory();
-// }
-
-// function CreateHist(b,c) {
-//     this.b = b;
-//     this.c = c;
-// }
-
-// // Заповнення історії
-// const historyWrapper = document.querySelector('.cards');
-
-// const createHistory = data => {
-//     return `
-//     <div class="card">
-//         <p class="card-title">${data.name}</p>
-//         <a href="${data.link}" class="card-link lng-card-link">Перейти на сайт</a>
-//         <p class="card-date">${data.date}</p>
-//     </div>
-//     `;
-// };
-
-// let historyData;
-// localStorage.length < 1 ? historyData = [] : historyData = JSON.parse(localStorage.getItem('history'));
-
-
-// function addHistory() {
-//     historyWrapper.innerHTML = '';
-//     if (historyData) {
-//         historyData.forEach(item => {
-//             console.log(item);
-//             historyWrapper.innerHTML += createHistory(item);
-//         });
-//     }
-// }
-// // addHistory();
-// console.log(historyData);
-
-
+    if (searchList) {
+        searchList.forEach(item => {
+            // переводимо все в нижній регістр та шукаємо збіги
+            if (item.innerText.toLowerCase().search(searchName.toLowerCase()) == -1) {
+                // приховуємо блок якщо немає збігу
+                item.classList.add("hide");
+            } 
+            else {
+                // показуємо блок якщо є збіг
+                item.classList.remove("hide");
+            }
+        });
+    } else {
+        searchList.forEach(item => {
+            item.classList.remove("hide");
+        });
+    }
+}
 

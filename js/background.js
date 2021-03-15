@@ -32,7 +32,7 @@ chrome.runtime.onInstalled.addListener(function () {
 
 //Color theme value 
 chrome.runtime.onInstalled.addListener(function () {
-    chrome.storage.sync.set({ colortheme: 'white' }, function () {
+    chrome.storage.sync.set({ colortheme: 'darkIOS' }, function () {
         console.log('Color theme.');
     });
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {

@@ -56,9 +56,12 @@ const createHist = data => {
     // створюємо блоки історії
     return `
         <div class="card">
-            <p class="card-title">${data.name}</p>
-            <a href="${data.link}" class="card-link lng-card-link" target="_blank">${data.link}</a>
-            <p class="card-date">${data.date}</p>
+            <div class="card-info">
+                <p class="card-title">${data.name}</p>
+                <a href="${data.link}" class="card-link lng-card-link" target="_blank">${data.link}</a>
+                <p class="card-date">${data.date}</p>
+            </div>
+            <div class="card-qr"></div>
         </div>
     `;
 };
@@ -79,6 +82,7 @@ function addHist() {
 
 historyBtn.addEventListener('click', () => {
     addHist();
+    histQR();
 });
 
 
@@ -104,7 +108,7 @@ function searchHist(searchName) {
             if (item.innerText.toLowerCase().search(searchName.toLowerCase()) == -1) {
                 // приховуємо блок якщо немає збігу
                 item.classList.add("hide");
-            } 
+            }
             else {
                 // показуємо блок якщо є збіг
                 item.classList.remove("hide");
@@ -117,3 +121,28 @@ function searchHist(searchName) {
     }
 }
 
+function histQR() {
+    let cardList = document.querySelectorAll('.card');
+
+    cardList.forEach((item) => {
+        item.addEventListener('click', function() {
+            item.querySelector('.card-info').classList.add('card-info-width');
+            let a = item.querySelector('.card-qr');
+            a.classList.add('active-card-qr');
+    
+            let link = item.querySelector('.card-info .card-link').href;
+            console.log(item);
+            console.log(a);
+            
+
+            let qrcode = new QRCode(a, {
+                text: link,
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.L
+            });
+        });
+    });
+}

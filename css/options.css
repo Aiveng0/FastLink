@@ -572,3 +572,31 @@ ul {
   ::-webkit-scrollbar-thumb:hover {
     background: #666; 
   }
+
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-info {
+    width: 100%;
+}
+
+.card-info-width {
+    width: 67%;
+    width: calc(100% - 220px);
+}
+
+.card-qr {
+    display: none;
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--gray-dark-1);
+    margin: 0 0 0 20px;
+}
+
+.active-card-qr {
+    display: flex;
+    background: #fff;
+}

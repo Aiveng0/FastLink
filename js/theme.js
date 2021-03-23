@@ -51,13 +51,11 @@ function includeCSS(aFile, aRel) {
     head.appendChild(style);
 }
 
-
 function removeTheme() {
     let colorTheme = window.document.querySelectorAll('.color-theme');
     colorTheme.forEach((item) => {
         item.remove();
     });
-
 }
 
 // Встановлення нової кольорової теми в глобальне сховище

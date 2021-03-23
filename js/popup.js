@@ -7,6 +7,7 @@ chrome.tabs.getSelected(null, function (tab) {
     let link = document.createElement('a');
     link.href = tab.url;
     console.log('Створення коду');
+    setThemePopup();
     createCode(tab);
     history(tab.title, tab.url);
 });
@@ -234,11 +235,8 @@ function createCode(tab) {
             }
         });
     });
-
-
-
-
 }
+
 
 
 

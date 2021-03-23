@@ -12,6 +12,8 @@ document.onkeydown = function (event) {
     }
 };
 
+
+// Вивід в консоль деякої інформації про налаштування
 function testInfo() {
     chrome.tabs.getSelected((info) => {
         console.log("Tab title: " + info.title + "\nURL: " + info.url + "\nStatus: " + info.status + "\nTab Id: " + info.id);

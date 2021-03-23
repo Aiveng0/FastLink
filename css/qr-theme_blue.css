@@ -1,0 +1,10 @@
+:root {
+    --main-bg: #0077B6;
+    --text-color: #ffffff;
+    --blue-btn: rgb(26 115 232); 
+    --btn-hover: #0096C7;
+    --btn-active: #00bcd4;
+    --btn-text: #ffffff;
+    --link-border: rgb(218 220 224);
+    --link-border-shadow: #0096C7;
+}

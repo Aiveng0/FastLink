@@ -1,0 +1,20 @@
+:root {
+    /* --main-bg: #1c1c1c;
+    --text-color: #ffffff;
+    --blue-btn: rgb(26 115 232); 
+    --btn-hover: #2c2c2c;
+    --btn-active: #3a3a3a;
+    --btn-text: #ffffff;
+    --link-border: #48484a;
+    --link-border-shadow: #48484a;  */
+
+    --main-bg: #2c2c2c;
+    --text-color: #ffffff;
+    --blue-btn: rgb(26 115 232); 
+    --btn-hover: #48484a;
+    --btn-active: #48484a;
+    --btn-text: #ffffff;
+    --link-border: #8e8e93;
+    --link-border-shadow: #48484a;
+}
+

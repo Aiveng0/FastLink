@@ -105,18 +105,18 @@ function searchHist(searchName) {
     if (searchList) {
         searchList.forEach(item => {
             // переводимо все в нижній регістр та шукаємо збіги
-            if (item.innerText.toLowerCase().search(searchName.toLowerCase()) == -1) {
+            if (item.querySelector('.card-title').innerText.toLowerCase().search(searchName.toLowerCase()) == -1) {
                 // приховуємо блок якщо немає збігу
-                item.classList.add("hide");
+                item.classList.add('hide');
             }
             else {
                 // показуємо блок якщо є збіг
-                item.classList.remove("hide");
+                item.classList.remove('hide');
             }
         });
     } else {
         searchList.forEach(item => {
-            item.classList.remove("hide");
+            item.classList.remove('hide');
         });
     }
 }
@@ -125,16 +125,16 @@ function histQR() {
     let cardList = document.querySelectorAll('.card');
 
     cardList.forEach((item) => {
-        item.addEventListener('click', function() {
-            item.querySelector('.card-info').classList.add('card-info-width');
+        item.addEventListener('click', function () {
+            item.querySelector('.card-info').classList.toggle('card-info-width');
             let a = item.querySelector('.card-qr');
-            a.classList.add('active-card-qr');
-    
-            let link = item.querySelector('.card-info .card-link').href;
-            console.log(item);
-            console.log(a);
-            
+            a.classList.toggle('active-card-qr');
 
+            let link = item.querySelector('.card-info .card-link').href;
+            //console.log(item);
+            //console.log(a);
+
+            a.innerHTML = '';
             let qrcode = new QRCode(a, {
                 text: link,
                 width: 200,
@@ -146,3 +146,22 @@ function histQR() {
         });
     });
 }
+
+// Кнопка автоматичної прокрутки вверх
+function scrollToTop() {
+    let scrollBtn = document.querySelector('.scrollToTop');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY >= 500) {
+            scrollBtn.classList.remove('hide');
+        } else {
+            scrollBtn.classList.add('hide');
+        }
+    });
+
+    scrollBtn.addEventListener('click', function () {
+        window.scrollTo(top);
+    });
+}
+
+scrollToTop();

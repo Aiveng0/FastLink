@@ -1,6 +1,9 @@
 :root {
     --main-bg: #FFFFFF;
     --sidebar-bg: #F1F1F1;
+    --tablink-bg: var(--gray-light-4);
+    --tablink-hover: var(--gray-light-3);
+    ;
     --text-color-1: #202124;
     --text-color-2: #5F6368;
     --light-border: #C8C8C8;
@@ -10,8 +13,7 @@
     --link: #0A84FF;
     --title-weight: 300;
     --line-height: 1.8rem;
-    --mess-gradient: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(253,251,29,1) 50%, rgba(255,255,255,1) 85%);
-
+    --mess-gradient: linear-gradient(90deg, rgba(255, 255, 255, 1) 15%, rgba(253, 251, 29, 1) 50%, rgba(255, 255, 255, 1) 85%);
     --pink-dark: #FF2D55;
     --purpule-dark: #BF5AF2;
     --blue-dark: #0A84FF;
@@ -19,7 +21,6 @@
     --yellow-dark: #FFD60A;
     --orange-dark: #FF9F0A;
     --red-dark: #FF453A;
-
     --pink-light: #FF2D55;
     --purpule-light: #AF52DE;
     --blue-light: #007AFF;
@@ -27,21 +28,18 @@
     --yellow-light: #FFCC00;
     --orange-light: #FF9500;
     --red-light: #FF3B30;
-
     --gray-light-1: #8E8E93;
     --gray-light-2: #AEAEB2;
     --gray-light-3: #C7C7CC;
     --gray-light-4: #D1D1D6;
     --gray-light-5: #E5E5EA;
     --gray-light-6: #F2F2F7;
-
     --gray-dark-1: #8E8E93;
     --gray-dark-2: #636366;
     --gray-dark-3: #48484A;
     --gray-dark-4: #3A3A3C;
     --gray-dark-5: #2C2C2E;
     --gray-dark-6: #1C1C1E;
-
 }
 
 body {
@@ -52,6 +50,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5 {
@@ -120,8 +119,8 @@ ul {
 }
 
 .sidebar-tabs li {
-    padding: 5px 0;   
-} 
+    padding: 5px 0;
+}
 
 .change-lang {
     font-family: 'Roboto', sans-serif;
@@ -162,7 +161,7 @@ ul {
     background-color: var(--white);
 }
 
-.change-theme option{
+.change-theme option {
     font-size: 15px;
     padding: 8px auto;
 }
@@ -178,7 +177,6 @@ ul {
     display: flex;
     align-items: center;
     text-align: left;
-    
 }
 
 .tablink-off-style {
@@ -304,6 +302,7 @@ ul {
 }
 
 /* радіо кнопки */
+
 .code-size-list input {
     margin: 0;
     outline: none;
@@ -340,6 +339,7 @@ ul {
 }
 
 /* радіо кнопки */
+
 .corection-list input {
     margin: 0;
     outline: none;
@@ -355,11 +355,13 @@ ul {
 }
 
 /* CLASS ACTIVE */
+
 .active {
     display: block;
 }
 
 /**/
+
 /* .code-size-2 label::after {
     content: "За замовчуванням";
     color: var(--text-color-2);
@@ -400,6 +402,7 @@ ul {
 }
 
 /**/
+
 .option-title-info {
     width: 16px;
     height: 16px;
@@ -444,8 +447,8 @@ ul {
     white-space: pre-wrap;
 }
 
-
 /**/
+
 .aboutextension-ul-list li {
     margin-left: 20px;
     list-style: initial;
@@ -467,6 +470,7 @@ ul {
 }
 
 /* HISTORY */
+
 .cards {
     width: 100%;
     margin-top: 30px;
@@ -548,31 +552,34 @@ ul {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 /* SCROLL BAR */
 
 /* width */
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #666; 
-  }
+}
 
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
 
 .card {
     display: flex;
@@ -599,4 +606,54 @@ ul {
 .active-card-qr {
     display: flex;
     background: #fff;
+}
+
+.scrollToTop {
+    position: fixed;
+    width: 150px;
+    height: 100%;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--tablink-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.scrollToTop p {
+    font-size: 22px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+/* 1300px */
+@media screen and (max-width: 1300px) {
+    .scrollToTop {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--tablink-bg);
+        border: 1px solid var(--tablink-hover);
+        box-shadow: 0 0 20px 0 var(--tablink-bg);
+        bottom: 75px;
+        right: 30px;
+    }
+}
+
+/* 690px */
+@media screen and (max-width: 690px) {
+	.card {
+        display: block;
+    }
+
+    .card-info-width {
+        width: 100%;
+    }
+
+    .card-qr {
+        margin: 20px 0 0 0;
+    }
 }

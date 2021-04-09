@@ -4,6 +4,8 @@ let codeSize = document.getElementById('codesize'),
     generalBtn = document.getElementById('general'),
     codeSizeBtn = document.getElementById('codesize'),
     corectionBtn = document.getElementById('corection'),
+    codeSizeDesc = document.getElementById('codesize_about'),
+    corectionDesc = document.getElementById('corection_about'),
     aboutExe = document.getElementById('aboutextension'),
     messageBox = document.querySelector('.message-container'),
     termofservice = document.getElementById('termofservice'),
@@ -11,7 +13,7 @@ let codeSize = document.getElementById('codesize'),
     privacy = document.getElementById('privacy');
 
 let btns = document.querySelectorAll('.tablink');
-let settingsArray = [codeSize, corection, privacy, termofservice, aboutExe, hist];
+let settingsArray = [codeSize, corection, privacy, termofservice, aboutExe, hist, codeSizeDesc, corectionDesc];
 
 function resetActive() {
     settingsArray.forEach(item => {
@@ -45,9 +47,11 @@ btns.forEach((item) => {
             corection.classList.add('active');
         } else if (item.attributes[0].value == "#codesize") {
             item.classList.add('nav-active-btn');
+            codeSizeDesc.classList.add('active');
             codeSize.classList.add('active');
         } else if (item.attributes[0].value == "#corection") {
             item.classList.add('nav-active-btn');
+            corectionDesc.classList.add('active');
             corection.classList.add('active');
         } else if (item.attributes[0].value == "#aboutextension") {
             item.classList.add('nav-active-btn');
@@ -64,7 +68,7 @@ btns.forEach((item) => {
         } else {
             return;
         }
-       
+
     });
 });
 
@@ -81,6 +85,7 @@ radioBtns.forEach((item) => {
     item.addEventListener('change', function () {
         if (item.attributes.id.value == 'code-size-1') {
             setSize("1");
+            sizeExample1.style.display = 'inline-block';
         } else if (item.attributes.id.value == 'code-size-2') {
             setSize("2");
         } else if (item.attributes.id.value == 'code-size-3') {
@@ -92,8 +97,55 @@ radioBtns.forEach((item) => {
         }
         let i = "Розмір QR коду";
         mess(i);
+        showExample();
     });
 });
+
+/*============================*/
+/*   Приклад розміру вікна    */
+/*============================*/
+
+// Елементи size-example
+let sizeExample1 = document.querySelector('.size-example__size400'),
+    sizeExample2 = document.querySelector('.size-example__size300'),
+    sizeExample3 = document.querySelector('.size-example__size250'),
+    sizeExample4 = document.querySelector('.size-example__size200');
+
+//Масив з елементами size-example
+let sizeExampleArray = [sizeExample1, sizeExample2, sizeExample3, sizeExample4];
+
+// Приховати всі елементи size-example
+function resetVisibile() {
+    sizeExampleArray.forEach(item => {
+        item.style.display = 'none';
+    });
+}
+
+function showExample() {
+    resetVisibile();
+    
+    chrome.storage.sync.get('size', function (data) {
+        // активуємо відповідний елемент
+        switch (data.size) {
+            case '1':
+                sizeExample1.style.display = 'inline-block';
+                break;
+            case '2':
+                sizeExample2.style.display = 'inline-block';
+                break;
+            case '3':
+                sizeExample3.style.display = 'inline-block';
+                break;
+            case '4':
+                sizeExample4.style.display = 'inline-block';
+                break;
+            default:
+                alert("Error");
+        }
+    });
+}
+
+showExample();
 
 /*========================*/
 /*   Блок повідомлення    */

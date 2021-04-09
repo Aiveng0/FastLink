@@ -7,7 +7,7 @@ const historyBtn = document.querySelector('.hist-btn');
 let hists = [];
 let hists1;
 
-// клас конструктор для передаці записів в локальне сховище
+// клас конструктор для передачі записів в локальне сховище
 function Task(name, link, date) {
     this.name = name;
     this.link = link;

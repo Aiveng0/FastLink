@@ -1,10 +1,14 @@
 // const maxImg = document.querySelector('.right-panel img');
+//const langSelect = document.querySelector('.change-lang');
 const select = document.querySelector('select');
 const allLang = ['en', 'ru', 'ua', 'es', 'zh', 'hi', 'de'];
 
 // document.querySelectorAll('.left-panel img').forEach(item => item.onmouseenter = (event) => maxImg.src = event.target.src);
 
+//langSelect.addEventListener('click', () => {});
 select.addEventListener('change', changeURLLanguage);
+
+
 
 // перенаправити на url з вказівкою мови
 function changeURLLanguage() {

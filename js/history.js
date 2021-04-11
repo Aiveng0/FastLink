@@ -165,3 +165,38 @@ function scrollToTop() {
 }
 
 scrollToTop();
+
+// Placeholder 
+
+function setHistoryPlaceholder() {
+    let historyPlaceholder = document.getElementById('history-search').attributes;
+    let hash = window.location.hash;
+
+    switch (hash) {
+        case '#ua':
+            historyPlaceholder[3].textContent = 'Пошук в історії';
+            break;
+        case '#ru':
+            historyPlaceholder[3].textContent = 'Поиск в истории';
+            break;
+        case '#en':
+            historyPlaceholder[3].textContent = 'Search in history';
+            break;
+        case '#es':
+            historyPlaceholder[3].textContent = 'Historial de búsquedas';
+            break;
+        case '#zh':
+            historyPlaceholder[3].textContent = '搜索历史记录';
+            break;
+        case '#hi':
+            historyPlaceholder[3].textContent = 'खोज इतिहास';
+            break;
+        case '#de':
+            historyPlaceholder[3].textContent = 'Suchverlauf';
+            break;
+        default:
+            historyPlaceholder[3].textContent = 'default';
+    }
+}
+
+setHistoryPlaceholder();

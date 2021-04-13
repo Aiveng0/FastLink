@@ -61,6 +61,7 @@ const createHist = data => {
                 <a href="${data.link}" class="card-link lng-card-link" target="_blank">${data.link}</a>
                 <p class="card-date">${data.date}</p>
             </div>
+            <div class="del"></div>
             <div class="card-qr"></div>
         </div>
     `;
@@ -83,9 +84,39 @@ function addHist() {
 historyBtn.addEventListener('click', () => {
     addHist();
     histQR();
+    delHist();
 });
 
+//   ==== Видалення записів з історії ==== 
 
+function delHist() {
+    // масив кнопок видалення 
+    let delBtns = document.querySelectorAll('.del');
+    delBtns.forEach(item => {
+        item.addEventListener('click', () => {
+            let element = item.parentNode.querySelector('.card-date').textContent;
+            let ttt = localStorage.getItem('hists');
+            let mas = JSON.parse(ttt);
+            // дата яка використовуватиметься як ID
+            mas.forEach(item => {
+                if (item != null) {
+                    if (item.date == element) {
+                        mas.splice(mas.indexOf(item),1);
+                    }
+                }
+            });
+
+            // оновлення сховища
+            hists1 = hists.concat(mas);
+            updatelocal();
+            // перерисовка елементів історії
+            addHist();
+            histQR();
+            // рекурсивний виклик
+            delHist();
+        });
+    });
+}
 
 //   ==== Пошук в історії ====
 

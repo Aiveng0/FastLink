@@ -588,11 +588,12 @@ ul {
 
 .card-info {
     width: 100%;
+    margin-right: 20px;
 }
 
 .card-info-width {
     width: 67%;
-    width: calc(100% - 220px);
+    width: calc(100% - 270px);
 }
 
 .card-qr {
@@ -605,7 +606,7 @@ ul {
 
 .active-card-qr {
     display: flex;
-    background: #fff;
+    background: #fff; 
 }
 
 .scrollToTop {
@@ -809,3 +810,18 @@ text-align: center;
         margin: 20px 0 0 0;
     }
 }
+
+/* DELETE */
+
+.card:hover .del {
+    width: 24px;
+    height: 24px;
+    background-image: url(../icon/del.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto 0 0;
+} 
+
+.card:hover .del:hover {
+    background-image: url(../icon/del-hover.png);
+} 

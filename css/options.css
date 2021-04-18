@@ -779,7 +779,10 @@ text-align: center;
     border: 2px solid var(--white);
 }
 
-
+.corection_about__ul {
+    margin-left: 20px;
+    list-style: disc;
+}
 
 /* 1300px */
 
@@ -825,3 +828,10 @@ text-align: center;
 .card:hover .del:hover {
     background-image: url(../icon/del-hover.png);
 } 
+
+
+
+
+.line-height {
+    line-height: var(--line-height);;
+}

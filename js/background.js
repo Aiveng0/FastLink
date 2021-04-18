@@ -46,5 +46,21 @@ chrome.runtime.onInstalled.addListener(function () {
     });
 });
 
+// Language 
+chrome.runtime.onInstalled.addListener(function () {
+    chrome.storage.sync.set({ language: "ua" }, function () {
+        console.log('Language.');
+    });
+    chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+        chrome.declarativeContent.onPageChanged.addRules([{
+            conditions: [new chrome.declarativeContent.PageStateMatcher({
+                pageUrl: { hostEquals: 'developer.chrome.com' },
+            })
+            ],
+            actions: [new chrome.declarativeContent.ShowPageAction()]
+        }]);
+    });
+});
+
 
 

@@ -4,7 +4,7 @@ Web extension to generate qr code with a link to the active site.
 <h2>Підключення</h2> 
 <ol>
   <li>Завантажте та розпакуйте архів</li>
-  <li>Перейдіть на сторінку <a href="chrome://extensions/">chrome://extensions/</a>
+  <li>Перейдіть на сторінку <code>chrome://extensions</code>
   <ul>
     <li>Крім того, ви можете відкрити цю сторінку натисканням кнопки
       меню Розширення і <strong>вибором пункту Керування розширеннями</strong> внизу меню.</li>

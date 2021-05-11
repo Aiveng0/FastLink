@@ -12,7 +12,6 @@ document.onkeydown = function (event) {
     }
 };
 
-
 // Вивід в консоль деякої інформації про налаштування
 function testInfo() {
     chrome.tabs.getSelected((info) => {
@@ -30,4 +29,8 @@ function testInfo() {
     chrome.storage.sync.get('corectionlevel', function (data) {
         console.log("Corection level: " + data.corectionlevel);
     });
+
+    let ttt = localStorage.getItem('hists');
+    let mas = JSON.parse(ttt);
+    console.log("History length: " + mas.length);
 }

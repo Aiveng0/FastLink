@@ -9,7 +9,7 @@ chrome.tabs.getSelected(null, function (tab) {
     console.log('Створення коду');
     setThemePopup();
     createCode(tab);
-    history(tab.title, tab.url);
+    history(tab.title, tab.url, tab.favIconUrl);
 });
 
 // Заголовки
@@ -20,7 +20,6 @@ chrome.tabs.getSelected(null, function (tab) {
 
 // Кнопка Завантажити
 let a = document.querySelector('.a');
-
 a.addEventListener('click', function (e) {
     let img = document.getElementsByTagName('img')[0];
     a.download = titlePlace.textContent.replace('.', '');
@@ -28,7 +27,6 @@ a.addEventListener('click', function (e) {
 });
 
 let changeColor = document.querySelector('.a');
-
 function inputReloadCode(qrcode) {
     descPlace.addEventListener('input', function () {
         qrcode.makeCode(descPlace.value);
@@ -37,7 +35,6 @@ function inputReloadCode(qrcode) {
 }
 
 // Визначення параметрів для створення
-
 function createCode(tab) {
     let getSize;
     let getCorrection;

@@ -1,5 +1,6 @@
 let histName;
 let histLink;
+let histIco;
 let date = new Date();
 const historyWrapper = document.querySelector('.cards');
 const historyBtn = document.querySelector('.hist-btn');
@@ -8,8 +9,9 @@ let hists = [];
 let hists1;
 
 // клас конструктор для передачі записів в локальне сховище
-function Task(name, link, date) {
+function Task(name, ico, link, date) {
     this.name = name;
+    this.ico = ico;
     this.link = link;
     this.date = date;
 }
@@ -18,7 +20,7 @@ const updatelocal = () => {
     localStorage.setItem('hists', JSON.stringify(hists1));
 };
 
-function history(b, c) {
+function history(b, c, ico) {
     // отримуємо дату
     let time = new Date();
 
@@ -38,28 +40,32 @@ function history(b, c) {
 
     histName = b;
     histLink = c;
+    histIco = ico;
 
     // оновлюємо локальне сховище (додаємо записи)
-    hists.push(new Task(histName, histLink, date));
+    hists.push(new Task(histName, histIco,histLink, date));
     let ttt = localStorage.getItem('hists');
     let mas = JSON.parse(ttt);
     hists1 = hists.concat(mas);
     updatelocal();
 }
 
-
-
 const createHist = data => {
+    let dispaly = 'inline-block';
     if (data == null) {
         return ` `;
     }
+    if (data.ico === null || data.ico === undefined  || data.ico == ''){
+        dispaly = 'none';
+    }
     // створюємо блоки історії
+    // <img src="${data.ico}"style="display: ${dispaly}; width: 16px;>
     return `
         <div class="card">
             <div class="card-info">
-                <p class="card-title">${data.name}</p>
+                <p class="card-title"><img src="${data.ico}"style="display: ${dispaly}; width: 16px; margin-right: 15px;">${data.name}</p>
                 <a href="${data.link}" class="card-link lng-card-link" target="_blank">${data.link}</a>
-                <p class="card-date">${data.date}</p>
+                <p class="card-date">${data.date}</p> 
             </div>
             <div class="del"></div>
             <div class="card-qr"></div>

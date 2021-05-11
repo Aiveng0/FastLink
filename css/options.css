@@ -3,10 +3,9 @@
     --sidebar-bg: #F1F1F1;
     --tablink-bg: var(--gray-light-4);
     --tablink-hover: var(--gray-light-3);
-    ;
     --text-color-1: #202124;
     --text-color-2: #5F6368;
-    --light-border: #C8C8C8;
+    --light-border: #c8c8c88c;
     --yellow: #fffb00;
     --white: #ffffff;
     --black: #000000;
@@ -606,7 +605,7 @@ ul {
 
 .active-card-qr {
     display: flex;
-    background: #fff; 
+    background: #fff;
 }
 
 .scrollToTop {
@@ -644,7 +643,7 @@ ul {
     font-size: 15px;
     box-sizing: border-box;
     background: var(--sidebar-bg);
-    box-shadow: 0 0 20px 0px #000;
+    box-shadow: 0 0 3px 0px #000;
     padding-bottom: 2px;
 }
 
@@ -723,9 +722,11 @@ ul {
 .size-example__link {
     font-family: 'Roboto', sans-serif;
     outline: none !important;
-    background: #48484a;
+    /* background: #48484a; */
+    background: var(--btn-hover);
     color: #fff;
     border: 2px solid #8e8e93;
+    border: 2px solid var(--light-border);
     width: -webkit-fill-available;
     border-radius: 4px;
     padding: 6px 8px;
@@ -737,8 +738,9 @@ ul {
     text-decoration: none;
     padding: 8px 16px;
     font-size: 13px;
-    color: #ffffff;
-    border: 1px solid #8e8e93;
+    color: var(--text-color);
+    /* border: 1px solid #8e8e93; */
+    border: 1px solid var(--tablink-bg);
     border-radius: 4px;
     cursor: pointer;
     min-width: 5.14em;
@@ -746,12 +748,14 @@ ul {
 }
 
 .size-example__a:active {
-    background: #48484a;
+    /* background: #48484a; */
+    border: 1px solid var(--tablink-bg);
     box-shadow: 0 1px 2px 0 rgba(var(--grey-800-rgb), .3), 0 3px 6px 2px rgba(var(--grey-800-rgb), .15);
 }
 
 .size-example__a:hover {
-    background-color: #48484a;
+    /* background-color: #48484a; */
+    border: 1px solid var(--tablink-bg);
 }
 
 .dispaly-inline-block {
@@ -759,6 +763,7 @@ ul {
 }
 
 /* Corection example */
+
 .ml15 {
     margin-left: 15px;
 }
@@ -770,7 +775,7 @@ ul {
 }
 
 .corection-example__title {
-text-align: center;
+    text-align: center;
 }
 
 .corection-example img {
@@ -815,6 +820,9 @@ text-align: center;
 }
 
 /* DELETE */
+/* .card:hover .card-info {
+    width: 90%;
+} */
 
 .card:hover .del {
     width: 24px;
@@ -823,15 +831,12 @@ text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto 0 0;
-} 
+}
 
 .card:hover .del:hover {
     background-image: url(../icon/del-hover.png);
-} 
-
-
-
+}
 
 .line-height {
-    line-height: var(--line-height);;
+    line-height: var(--line-height);
 }

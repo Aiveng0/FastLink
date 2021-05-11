@@ -9,21 +9,21 @@
     --input-radoi-box-shadow: rgba(0, 123, 255, 0.25);
 }
 
-/* для элемента input c type="radio" */
+/* для елемента input c type="radio" */
 input[type="radio"] {
     position: absolute;
     z-index: -1;
     opacity: 0;
   }
 
-  /* для элемента label связанного с input[type="radio"] */
+  /* для елементу label повязаного з input[type="radio"] */
   input[type="radio"]+label {
     display: inline-flex;
     align-items: center;
     user-select: none;
   }
 
-  /* создание в label псевдоэлемента  before со следующими стилями */
+  /* створення в label псевдоелементу  before з наступними стилями */
   input[type="radio"]+label::before {
     content: '';
     display: inline-block;
@@ -39,35 +39,35 @@ input[type="radio"] {
     background-size: 50% 50%;
   }
 
-  /* стили при наведении курсора на радио */
+  /* стилі при наведенні курсора на радіо */
   input[type="radio"]:not(:disabled):not(:checked)+label:hover::before {
     border-color: var(--input-radio-border-hover);
   }
 
-  /* стили для активной радиокнопки (при нажатии на неё) */
+  /* стилі для активної радіокнопки (при натисненні на неї) */
   input[type="radio"]:not(:disabled):active+label::before {
     background-color: var(--input-radio-bg);
     border-color: var(--input-radio-border-hover);
   }
 
-  /* стили для радиокнопки, находящейся в фокусе */
+  /* стилі для радіокнопки, яка знаходиться в фокусі */
   input[type="radio"]:focus+label::before {
     box-shadow: 0 0 0 0.2rem var(--input-radio-box-shadow);
   }
 
-  /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+  /* стилі для радіокнопки, яка знаходиться в фокусі і не знаходиться в стані checked */
   input[type="radio"]:focus:not(:checked)+label::before {
     border-color: var(--input-radio-border-focus);
   }
 
-  /* стили для радиокнопки, находящейся в состоянии checked */
+  /* стилі для радіокнопки, яка знаходиться в стані checked */
   input[type="radio"]:checked+label::before {
     border-color: var(--input-radio-border-checked);
     background-color: var(--input-radio-bg-checked);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
   }
 
-  /* стили для радиокнопки, находящейся в состоянии disabled */
+  /* стилі для радіокнопки, яка знаходиться в стані disabled */
   input[type="radio"]:disabled+label::before {
     background-color: var(--input-radio-dis);
   }

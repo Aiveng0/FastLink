@@ -33,7 +33,7 @@ Web extension to generate qr code with a link to the active site.
             налаштувань</li>
   <li>history.js – збереження історії (сайти на яких використано розширення) та пошук в історії</li>
   <li>theme.js – вибір кольорових тем для сторінки налаштувань</li>
-  <li>app.js – зміна мови (7 міжнародних мов)</li>
+  <li>language.js – зміна мови (7 міжнародних мов)</li>
   <li>lang.js – файл перекладу</li>
   <li>сonsole-mod.js – вивід в консоль деякої інформації про налаштування</li>
 </ul>

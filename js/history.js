@@ -20,6 +20,7 @@ const updatelocal = () => {
     localStorage.setItem('hists', JSON.stringify(hists1));
 };
 
+
 function history(b, c, ico) {
     // отримуємо дату
     let time = new Date();
@@ -91,6 +92,7 @@ historyBtn.addEventListener('click', () => {
     addHist();
     histQR();
     delHist();
+    soundBB3();
 });
 
 //   ==== Видалення записів з історії ==== 
@@ -120,6 +122,8 @@ function delHist() {
             histQR();
             // рекурсивний виклик
             delHist();
+            // Звук видалення 
+            soundWindowsRecycle();
         });
     });
 }

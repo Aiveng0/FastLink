@@ -820,6 +820,7 @@ ul {
 }
 
 /* DELETE */
+
 /* .card:hover .card-info {
     width: 90%;
 } */
@@ -840,3 +841,40 @@ ul {
 .line-height {
     line-height: var(--line-height);
 }
+
+/*--------------*/
+/*  Preloading  */
+/*--------------*/
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    transition: 0s all;
+    opacity: 1;
+    visibility: visible;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.preload-gif {
+    width: 383px;
+    height: 480px;
+    background: #1c1c1c url('https://i.gifer.com/XOsX.gif') no-repeat center center;
+}
+
+.preload-text {
+    font-size: 40px;
+    margin: 0;
+}
+
+.preloader-done {
+    opacity: 0;
+    visibility: hidden;
+}
+

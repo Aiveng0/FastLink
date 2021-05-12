@@ -69,6 +69,7 @@ btns.forEach((item) => {
             return;
         }
 
+        soundWindowsNavigationStart();
     });
 });
 
@@ -98,6 +99,7 @@ radioBtns.forEach((item) => {
         let i = "Розмір QR коду";
         mess(i);
         showExample();
+        soundBB3();
     });
 });
 
@@ -241,6 +243,7 @@ radioCrectBtns.forEach((item) => {
         }
         let i = "Рівень корекції";
         mess(i);
+        soundBB3();
     });
 });
 
@@ -289,5 +292,32 @@ function removeCheckedSizeCorection() {
 
 setCheckedSizeCorection();
 
+function soundBB3() {
+    document.getElementById('sound_bb3').play();
+}
 
+function soundWindowsNavigationStart() {
+    document.getElementById('sound_windows-navigation-start').play();
+}
 
+function soundWindowsRecycle() {
+    document.getElementById('sound_windows-recycle').play();
+}
+
+function soundWindowsLogin() {
+    document.getElementById('sound_windows-login').play();
+}
+
+//window.onload = soundWindowsLogin;
+
+/* Preloader */
+document.body.onload = function() {
+	setTimeout(function() {
+		var preloader = document.getElementById('page-preloader');
+		if(!preloader.classList.contains('preloader-done'))
+		{
+			preloader.classList.add('preloader-done');
+            soundWindowsLogin();
+		}
+	}, 500);  //3500
+};

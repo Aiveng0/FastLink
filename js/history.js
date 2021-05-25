@@ -92,7 +92,7 @@ historyBtn.addEventListener('click', () => {
     addHist();
     histQR();
     delHist();
-    soundBB3();
+    soundsFunc.soundBB3();
 });
 
 //   ==== Видалення записів з історії ==== 
@@ -123,7 +123,7 @@ function delHist() {
             // рекурсивний виклик
             delHist();
             // Звук видалення 
-            soundWindowsRecycle();
+            soundsFunc.soundWindowsRecycle();
         });
     });
 }

@@ -136,3 +136,7 @@ body {
 .nav-active-btn {
     background: var(--main-bg);
 }
+
+input:checked+.slider-checkbox {
+    background-color: #32d74b;
+}

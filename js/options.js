@@ -12,8 +12,17 @@ let codeSize = document.getElementById('codesize'),
     hist = document.getElementById('history'),
     privacy = document.getElementById('privacy');
 
+let soundsSwitch = document.getElementById('sounds-switch');
 let btns = document.querySelectorAll('.tablink');
 let settingsArray = [codeSize, corection, privacy, termofservice, aboutExe, hist, codeSizeDesc, corectionDesc];
+
+let soundsFunc = {
+    soundBB3: function () { },
+    soundWindowsNavigationStart: function () { },
+    soundWindowsRecycle: function () { },
+    soundWindowsLogin: function () { }
+};
+isCheckSound();
 
 function resetActive() {
     settingsArray.forEach(item => {
@@ -69,7 +78,7 @@ btns.forEach((item) => {
             return;
         }
 
-        soundWindowsNavigationStart();
+        soundsFunc.soundWindowsNavigationStart();
     });
 });
 
@@ -99,7 +108,7 @@ radioBtns.forEach((item) => {
         let i = "Розмір QR коду";
         mess(i);
         showExample();
-        soundBB3();
+        soundsFunc.soundBB3();
     });
 });
 
@@ -125,7 +134,7 @@ function resetVisibile() {
 
 function showExample() {
     resetVisibile();
-    
+
     chrome.storage.sync.get('size', function (data) {
         // активуємо відповідний елемент
         switch (data.size) {
@@ -243,7 +252,7 @@ radioCrectBtns.forEach((item) => {
         }
         let i = "Рівень корекції";
         mess(i);
-        soundBB3();
+        soundsFunc.soundBB3();
     });
 });
 
@@ -292,32 +301,63 @@ function removeCheckedSizeCorection() {
 
 setCheckedSizeCorection();
 
-function soundBB3() {
-    document.getElementById('sound_bb3').play();
-}
+// function soundBB3() {
+//     document.getElementById('sound_bb3').play();
+// }
 
-function soundWindowsNavigationStart() {
-    document.getElementById('sound_windows-navigation-start').play();
-}
+// function soundWindowsNavigationStart() {
+//     document.getElementById('sound_windows-navigation-start').play();
+// }
 
-function soundWindowsRecycle() {
-    document.getElementById('sound_windows-recycle').play();
-}
+// function soundWindowsRecycle() {
+//     document.getElementById('sound_windows-recycle').play();
+// }
 
-function soundWindowsLogin() {
-    document.getElementById('sound_windows-login').play();
-}
+// function soundWindowsLogin() {
+//     document.getElementById('sound_windows-login').play();
+// }
 
 //window.onload = soundWindowsLogin;
 
 /* Preloader */
-document.body.onload = function() {
-	setTimeout(function() {
-		var preloader = document.getElementById('page-preloader');
-		if(!preloader.classList.contains('preloader-done'))
-		{
-			preloader.classList.add('preloader-done');
-            soundWindowsLogin();
-		}
-	}, 500);  //3500
+document.body.onload = function () {
+    setTimeout(function () {
+        var preloader = document.getElementById('page-preloader');
+        if (!preloader.classList.contains('preloader-done')) {
+            preloader.classList.add('preloader-done');
+            soundsFunc.soundWindowsLogin();
+        }
+    }, 500);  //3500
 };
+
+
+
+
+soundsSwitch.addEventListener('change', function () {
+    isCheckSound();
+});
+
+// let soundsFunc = {};
+// isCheckSound();
+
+function isCheckSound() {
+    if (soundsSwitch.checked) {
+        console.log("WORK");
+
+        soundsFunc = {
+            soundBB3: function () { document.getElementById('sound_bb3').play(); },
+            soundWindowsNavigationStart: function () { document.getElementById('sound_windows-navigation-start').play(); },
+            soundWindowsRecycle: function () { document.getElementById('sound_windows-recycle').play(); },
+            soundWindowsLogin: function () { document.getElementById('sound_windows-login').play(); }
+        };
+
+    } else if (!soundsSwitch.checked) {
+        console.log("STOP");
+        soundsFunc = {
+            soundBB3: function () { },
+            soundWindowsNavigationStart: function () { },
+            soundWindowsRecycle: function () { },
+            soundWindowsLogin: function () { }
+        };
+    }
+}

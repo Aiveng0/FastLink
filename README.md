@@ -3,50 +3,50 @@ Web extension to generate qr code with a link to the active site.
 
 <h2>Підключення</h2> 
 <ol>
-  <li>Завантажте та розпакуйте архів</li>
-  <li>Перейдіть на сторінку <code>chrome://extensions</code>
+  <li>Download and unzip the archive</li>
+  <li>Go to the page <code>chrome://extensions</code>
   <ul>
-    <li>Крім того, ви можете відкрити цю сторінку натисканням кнопки
-      меню Розширення і <strong>вибором пункту Керування розширеннями</strong> внизу меню.</li>
-    <li>Або відкрийте цю сторінку, натиснувши на меню Chrome, навівши курсор на <strong>інші інструменти</strong>, а потім <strong>вибравши Розширення</strong></li>
+    <li>Also, you can access the page by pressing
+       Extensions menu and <strong>by selecting Extension Management</strong> at the bottom of the menu.</li>
+    <li>Or open this page by clicking the Chrome menu, hovering over <strong> other tools </strong>, then <strong> selecting Extensions</strong></li>
   </ul>
   </li>
-  <li>Увімкніть режим розробника, натиснувши перемикач поруч із пунктом "Режим розробника".
+  <li>Enable Developer Mode by clicking the radio button next to Developer Mode.
 </li>
-  <li>Натисніть на "Завантажити розпаковане розширення" та виберіть папку з розпакованим архівом</li>
+  <li>Click on "Download unpacked extension" and select the folder with the unpacked archive.</li>
 </ol>
-<p>Розширення успішно інстальовано.</p>
+<p>Extension successfully installed.</p>
 
-<h2>Список файлів</h2>
+<h2>List of files</h2>
 <h4>HTML</h4>
 <ul>
-  <li>popup.html – головне вікно програми в якому створюється qr код</li>
-  <li>option.html – сторінка з усіма налаштуваннями</li>
+  <li>popup.html – the main window of the program in which the qr code is generated</li>
+  <li>option.html – page with all settings</li>
 </ul>
 <h4>JS</h4>
 <ul>
-  <li>qrcode.min.js – бібліотека для створення qr кодів </li>
-  <li>background.js – збереження налаштувань в глобальному сховищі Google Chrome</li>
-  <li>popup.js – тут ініціалізовано створення коду, пошук, отримання посилань та заголовків, зміна коду при
-            введенні з живому часі та завантаження зображення коду</li>
-  <li>option.js – ініціалізовані налаштування зміни розміру та рівня корекції, основний функціонал сторінки
-            налаштувань</li>
-  <li>history.js – збереження історії (сайти на яких використано розширення) та пошук в історії</li>
-  <li>theme.js – вибір кольорових тем для сторінки налаштувань</li>
-  <li>language.js – зміна мови (7 міжнародних мов)</li>
-  <li>lang.js – файл перекладу</li>
-  <li>сonsole-mod.js – вивід в консоль деякої інформації про налаштування</li>
+  <li>qrcode.min.js – library for creating qr codes </li>
+  <li>background.js – save settings in the Google Chrome global storage</li>
+  <li>popup.js – here is initialized code creation, search, getting links and headings, changing the code when
+             live input and code image download</li>
+  <li>option.js – initialized settings for resizing and correction level, the main functionality of the page
+             settings</li>
+  <li>history.js – save history (sites that use extensions) and search history</li>
+  <li>theme.js – select color themes for the settings page</li>
+  <li>language.js – language change (7 international languages)</li>
+  <li>lang.js – translation file</li>
+  <li>сonsole-mod.js – output to the console some information about the settings</li>
 </ul>
 <h4>JSON</h4>
 <ul>
-  <li>manifest.json – інформація про розфирення та запит всіх потрібних дозволів для роботи з браузером</li>
+  <li>manifest.json – information about the extension and request all the necessary permissions to work with the browser</li>
 </ul>
 <h4>CSS</h4>
 <ul>
-  <li>main.css – стилі для popup.html</li>
-  <li>option.css – стилі для option.html</li>
-  <li>input-radio.css – зміна стилів для радіокнопок</li>
-  <li>trash.css – порожній файл, потрібний для зміни теми</li>
-  <li>theme_ … .css – стилі для різних кольорових тем (black, blue, darkIOS, white, test)</li>
+  <li>main.css – styles for popup.html</li>
+  <li>option.css – styles for option.html</li>
+  <li>input-radio.css – change styles for radio buttons</li>
+  <li>trash.css – an empty file needed to change the theme</li>
+  <li>theme_ … .css – styles for different color themes (black, blue, darkIOS, white, test)</li>
 </ul>
 

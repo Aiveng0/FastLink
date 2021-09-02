@@ -1,7 +1,7 @@
 # FastLink
 Web extension to generate qr code with a link to the active site.
 
-<h2>Підключення</h2> 
+<h2>Installation</h2> 
 <ol>
   <li>Download and unzip the archive</li>
   <li>Go to the page <code>chrome://extensions</code>
